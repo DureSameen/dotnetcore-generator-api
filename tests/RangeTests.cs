@@ -1,6 +1,6 @@
-using System;
+
 using System.Linq;
-using api.Controllers;
+using donetcore_generator_api.Controllers;
 using Xunit;
 
 namespace tests

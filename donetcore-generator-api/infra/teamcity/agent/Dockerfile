@@ -1,4 +1,3 @@
-FROM jetbrains/teamcity-agent:2017.1.2
-
-RUN curl -L https://github.com/docker/compose/releases/download/1.13.0/docker-compose-`dure.sameen -s`-`dure.sameeen -m` > /usr/local/bin/docker-compose \
+FROM jetbrains/teamcity-agent:2017.1.4
+RUN curl -L https://github.com/docker/compose/releases/download/1.13.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
     && chmod +x /usr/local/bin/docker-compose
