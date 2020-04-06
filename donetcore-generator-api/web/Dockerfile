@@ -1,5 +1,5 @@
 # Build Stage
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1    AS build-env
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1.0    AS build-env
 WORKDIR /donetcore-generator-api
 
 COPY donetcore-generator-api.csproj .
@@ -9,7 +9,7 @@ COPY . .
 RUN dotnet publish -o /publish
 
 # Runtime Image Stage
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS build
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1.0 AS build
 WORKDIR /publish
 COPY --from=build-env /publish .
 ENTRYPOINT ["dotnet", "donetcore-generator-api.dll"]

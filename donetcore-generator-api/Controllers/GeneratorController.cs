@@ -10,7 +10,7 @@ using MailKit.Security;
 
 namespace donetcore_generator_api.Controllers
 {
-    // Just use action name as route
+    // Just use action name as route.
     [Route("[action]")]
     public class GenerateController : Controller
     {
