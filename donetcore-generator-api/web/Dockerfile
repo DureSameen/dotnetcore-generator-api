@@ -1,6 +1,6 @@
 # Build Stage
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1.0    AS build-env
-WORKDIR /donetcore-generator-api
+WORKDIR ../donetcore-generator-api
 
 COPY donetcore-generator-api.csproj .
 RUN dotnet restore

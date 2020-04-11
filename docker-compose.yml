@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  integration:
+    image: ${DOCKER_REGISTRY-}integration
+    build:
+      context: .
+      dockerfile: integration/Dockerfile
