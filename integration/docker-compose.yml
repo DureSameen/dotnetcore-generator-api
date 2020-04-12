@@ -2,15 +2,15 @@
 
 services:
   generator:
-    image: localhost:57000/dotnetcore-gen:ci-${GENERATOR_BUILD_NUMBER-10}
-    #ports:
-    #  - "8080:80"
+    image: localhost:57000/dotnetcore-gen:ci-${GENERATOR_BUILD_NUMBER-11}
+    ports:
+    - "8080:80"
   mail:
     image: mailhog/mailhog
-    #ports:
-    #  - "8025:8025"
+    ports:
+     - "8025:8025"
   integration:
-    image:  localhost:57000/dotnetcore-gen:integration-${BUILD_NUMBER-10}
+    image:  localhost:57000/dotnetcore-gen:integration-${BUILD_NUMBER-18}
     build: .
     environment:
       - TEAMCITY_PROJECT_NAME

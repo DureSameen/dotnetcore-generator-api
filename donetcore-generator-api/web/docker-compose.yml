@@ -4,7 +4,7 @@ services:
   generator:
     build:
       context: .
-    image: localhost:57000/dotnetcore-gen:ci-10
+    image: localhost:57000/dotnetcore-gen:ci-11
     ports:
       - "8080:80"
   mail:

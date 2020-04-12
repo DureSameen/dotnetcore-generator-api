@@ -9,8 +9,8 @@ namespace integration
 {
     public class EmailTests
     {
-        public const string GeneratorApiRoot = "http://localhost:8080";
-        public const string MailHogApiV2Root = "http://localhost:8025/api/v2";
+        public const string GeneratorApiRoot = "http://generator";
+        public const string MailHogApiV2Root = "http://mail:8025/api/v2";
 
         [Fact]
         public async Task SendEmailWithNames_IsFromGenerator()
@@ -40,12 +40,12 @@ namespace integration
                 response.EnsureSuccessStatusCode();
                 var content = await response.Content.ReadAsStringAsync();
                 var messages = JObject.Parse(content);
-                messages.Should().HaveElement("total").Which.Should().BeSameAs(1);
+                messages.Should().HaveElement("total").Which.Should().Be(1);
                 messages.Should().HaveElement("items")
                     .Which.Should().BeOfType<JArray>()
                     .Which.First.Should().HaveElement("Raw")
                     .Which.Should().HaveElement("From")
-                    .Which.Should().BeSameAs("generator@generate.com");
+                    .Which.Should().Be("generator@generate.com");
             }
         }
     }
