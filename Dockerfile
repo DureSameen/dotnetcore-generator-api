@@ -7,10 +7,7 @@ RUN dotnet restore donetcore-generator-api/donetcore-generator-api.csproj
 COPY tests/tests.csproj ./tests/
 RUN dotnet restore  tests/tests.csproj
 
-COPY . .
-
-
-
+COPY . . 
 # test
 ENV TEAMCITY_PROJECT_NAME=fake
 RUN dotnet test tests/tests.csproj
