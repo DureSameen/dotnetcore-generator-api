@@ -11,7 +11,7 @@ namespace donetcore_generator_api.Controllers
         public bool Sort { get; set; } = false;
 
         public IEnumerable<TItem> Of<TItem>(Func<TItem> generateItem)
-            => Count.Times(i => generateItem())
-                .OrderBy(n => Sort ? n : default);
+            => Count.Times(i => generateItem());
+                //.OrderBy(n => Sort ? n : default);
     }
 }
