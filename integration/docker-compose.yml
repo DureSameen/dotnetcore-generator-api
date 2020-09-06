@@ -12,3 +12,5 @@ services:
   integration:
     image:  localhost:57000/dotnetcore-gen:integration-${BUILD_NUMBER-18}
     build: .
+    environment:
+      - TEAMCITY_PROJECT_NAME=fake
